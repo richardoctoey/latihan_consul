@@ -1,0 +1,25 @@
+syntax = "proto3";
+package helloworld;
+
+message HelloRequest {
+  string name = 1;
+  int32 age = 2;
+}
+
+message HelloReply {
+  string response = 1;
+}
+
+message HealthRequest {
+
+}
+
+message HealthReply {
+  string message = 1;
+}
+
+service Greeter {
+  // Sends a greeting
+  rpc SayHello (HelloRequest) returns (HelloReply) {}
+  rpc Health (HealthRequest) returns (HealthReply) {}
+}
